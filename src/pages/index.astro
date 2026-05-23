@@ -22,22 +22,27 @@ import { ArrowRight, Code, Github, RefreshCw, Share2 } from "lucide-react";
   description="Komunitas pengembang yang membangun perangkat lunak terbuka untuk Papua. Gratis, bisa dipelajari, dan bisa dikembangkan oleh siapa saja."
 >
   <div class="min-h-screen">
-
     {/* Hero */}
     <section class="py-20 md:py-32">
       <div class="max-w-5xl mx-auto px-4 md:px-8">
-        <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16 items-center">
+        <div
+          class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16 items-center"
+        >
           <div class="space-y-7">
             <h1 class="text-5xl font-bold sm:text-6xl">
               Teknologi untuk Papua,<br />dibuat bersama.
             </h1>
             <p class="text-muted-foreground text-lg leading-relaxed max-w-lg">
               Kami adalah komunitas pengembang, desainer, dan pecinta teknologi
-              yang membangun perangkat lunak terbuka untuk Tanah Papua.
-              Terbuka untuk dipelajari, dimodifikasi, dan dikembangkan oleh siapa saja.
+              yang membangun perangkat lunak terbuka untuk Tanah Papua. Terbuka
+              untuk dipelajari, dimodifikasi, dan dikembangkan oleh siapa saja.
             </p>
             <div class="flex flex-col gap-3 min-[400px]:flex-row">
-              <Button size="lg" variant="default" className="h-11 px-6 font-semibold text-sm tracking-wide">
+              <Button
+                size="lg"
+                variant="default"
+                className="h-11 px-6 font-semibold text-sm tracking-wide"
+              >
                 <Link href="/kontribusi/">Mulai Berkontribusi</Link>
               </Button>
               <Button size="lg" variant="outline" className="h-11 px-6 text-sm">
@@ -65,12 +70,20 @@ import { ArrowRight, Code, Github, RefreshCw, Share2 } from "lucide-react";
       <div class="max-w-5xl mx-auto px-4 md:px-8">
         <div class="space-y-12">
           <div class="space-y-3">
-            <p class="text-xs font-semibold tracking-widest uppercase text-muted-foreground">Cara Kerja Kami</p>
-            <h2 class="text-3xl font-semibold">Sederhana, terbuka, berulang.</h2>
+            <p
+              class="text-xs font-semibold tracking-widest uppercase text-muted-foreground"
+            >
+              Cara Kerja Kami
+            </p>
+            <h2 class="text-3xl font-semibold">
+              Sederhana, terbuka, berulang.
+            </h2>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
             <div class="space-y-3">
-              <div class="flex items-center justify-center w-9 h-9 rounded-md bg-secondary text-foreground">
+              <div
+                class="flex items-center justify-center w-9 h-9 rounded-md bg-secondary text-foreground"
+              >
                 <Share2 className="h-4 w-4" />
               </div>
               <h3 class="font-semibold text-base">Share</h3>
@@ -80,17 +93,21 @@ import { ArrowRight, Code, Github, RefreshCw, Share2 } from "lucide-react";
               </p>
             </div>
             <div class="space-y-3">
-              <div class="flex items-center justify-center w-9 h-9 rounded-md bg-secondary text-foreground">
+              <div
+                class="flex items-center justify-center w-9 h-9 rounded-md bg-secondary text-foreground"
+              >
                 <Code className="h-4 w-4" />
               </div>
               <h3 class="font-semibold text-base">Improve</h3>
               <p class="text-muted-foreground text-sm leading-relaxed">
-                Temukan bug, usulkan perubahan, atau tambahkan fitur baru.
-                Kode yang baik terus berkembang lewat banyak tangan.
+                Temukan bug, usulkan perubahan, atau tambahkan fitur baru. Kode
+                yang baik terus berkembang lewat banyak tangan.
               </p>
             </div>
             <div class="space-y-3">
-              <div class="flex items-center justify-center w-9 h-9 rounded-md bg-secondary text-foreground">
+              <div
+                class="flex items-center justify-center w-9 h-9 rounded-md bg-secondary text-foreground"
+              >
                 <RefreshCw className="h-4 w-4" />
               </div>
               <h3 class="font-semibold text-base">Repeat</h3>
@@ -111,19 +128,28 @@ import { ArrowRight, Code, Github, RefreshCw, Share2 } from "lucide-react";
       <div class="max-w-5xl mx-auto px-4 md:px-8">
         <div class="space-y-12">
           <div class="space-y-3">
-            <p class="text-xs font-semibold tracking-widest uppercase text-muted-foreground">Proyek Kami</p>
+            <p
+              class="text-xs font-semibold tracking-widest uppercase text-muted-foreground"
+            >
+              Proyek Kami
+            </p>
             <h2 class="text-3xl font-semibold">Apa yang sedang kami bangun.</h2>
             <p class="max-w-xl text-muted-foreground text-base">
-              Setiap proyek lahir dari kebutuhan nyata di Papua — dari pelestarian
-              bahasa daerah hingga promosi wisata lokal.
+              Setiap proyek lahir dari kebutuhan nyata di Papua — dari
+              pelestarian bahasa daerah hingga promosi wisata lokal.
             </p>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            <Card className="flex flex-col h-full bg-card border border-border shadow-none rounded-[10px]">
+            <Card
+              className="flex flex-col h-full bg-card border border-border shadow-none rounded-[10px]"
+            >
               <CardHeader>
-                <CardTitle className="text-base font-semibold">Dapoer Papoea</CardTitle>
+                <CardTitle className="text-base font-semibold"
+                  >Dapoer Papoea</CardTitle
+                >
                 <CardDescription className="text-sm leading-relaxed">
-                  Dokumentasi dan pelestarian resep-resep kuliner khas Papua dalam satu platform terbuka.
+                  Dokumentasi dan pelestarian resep-resep kuliner khas Papua
+                  dalam satu platform terbuka.
                 </CardDescription>
               </CardHeader>
               <CardFooter className="mt-auto pt-4">
@@ -140,11 +166,16 @@ import { ArrowRight, Code, Github, RefreshCw, Share2 } from "lucide-react";
               </CardFooter>
             </Card>
 
-            <Card className="flex flex-col h-full bg-card border border-border shadow-none rounded-[10px]">
+            <Card
+              className="flex flex-col h-full bg-card border border-border shadow-none rounded-[10px]"
+            >
               <CardHeader>
-                <CardTitle className="text-base font-semibold">Kamus Bahasa Moy — Web</CardTitle>
+                <CardTitle className="text-base font-semibold"
+                  >Kamus Bahasa Moy — Web</CardTitle
+                >
                 <CardDescription className="text-sm leading-relaxed">
-                  Kamus digital untuk melestarikan bahasa Moy dari Jayapura, dapat diakses langsung di browser.
+                  Kamus digital untuk melestarikan bahasa Moy dari Jayapura,
+                  dapat diakses langsung di browser.
                 </CardDescription>
               </CardHeader>
               <CardFooter className="mt-auto pt-4">
@@ -161,11 +192,16 @@ import { ArrowRight, Code, Github, RefreshCw, Share2 } from "lucide-react";
               </CardFooter>
             </Card>
 
-            <Card className="flex flex-col h-full bg-card border border-border shadow-none rounded-[10px]">
+            <Card
+              className="flex flex-col h-full bg-card border border-border shadow-none rounded-[10px]"
+            >
               <CardHeader>
-                <CardTitle className="text-base font-semibold">Kamus Bahasa Moy — Mobile</CardTitle>
+                <CardTitle className="text-base font-semibold"
+                  >Kamus Bahasa Moy — Mobile</CardTitle
+                >
                 <CardDescription className="text-sm leading-relaxed">
-                  Versi mobile app dari kamus Bahasa Moy, tersedia di genggaman untuk pengguna Android.
+                  Versi mobile app dari kamus Bahasa Moy, tersedia di genggaman
+                  untuk pengguna Android.
                 </CardDescription>
               </CardHeader>
               <CardFooter className="mt-auto pt-4">
@@ -182,17 +218,22 @@ import { ArrowRight, Code, Github, RefreshCw, Share2 } from "lucide-react";
               </CardFooter>
             </Card>
 
-            <Card className="flex flex-col h-full bg-card border border-border shadow-none rounded-[10px]">
+            <Card
+              className="flex flex-col h-full bg-card border border-border shadow-none rounded-[10px]"
+            >
               <CardHeader>
-                <CardTitle className="text-base font-semibold">Trip Ke Papua</CardTitle>
+                <CardTitle className="text-base font-semibold"
+                  >Papuan Thought</CardTitle
+                >
                 <CardDescription className="text-sm leading-relaxed">
-                  Situs yang mempromosikan keindahan alam Papua, kuliner lokal, karya seni, UMKM, dan event budaya.
+                  Sebuah platform terbuka untuk esai, refleksi, dan tulisan
+                  komunitas dari orang Papua.
                 </CardDescription>
               </CardHeader>
               <CardFooter className="mt-auto pt-4">
                 <Button variant="outline" className="w-full text-sm">
                   <Link
-                    href="https://github.com/papuaopensource/tripkepapua"
+                    href="https://github.com/papuaopensource/papuanthought"
                     target="_blank"
                     class="flex items-center justify-center gap-2"
                   >
@@ -203,17 +244,21 @@ import { ArrowRight, Code, Github, RefreshCw, Share2 } from "lucide-react";
               </CardFooter>
             </Card>
 
-            <Card className="flex flex-col h-full bg-card border border-border shadow-none rounded-[10px]">
+            <Card
+              className="flex flex-col h-full bg-card border border-border shadow-none rounded-[10px]"
+            >
               <CardHeader>
-                <CardTitle className="text-base font-semibold">Kastau Muzik</CardTitle>
+                <CardTitle className="text-base font-semibold">Mops</CardTitle>
                 <CardDescription className="text-sm leading-relaxed">
-                  Platform untuk menampung dan melestarikan lagu-lagu daerah Papua agar mudah ditemukan dan didengarkan.
+                  Project yang bertujuan mengumpulkan dan menyebarluaskan "mop"
+                  — istilah lokal Papua untuk cerita lucu, lelucon, atau kisah
+                  ringan yang diceritakan dalam dialek Papua.
                 </CardDescription>
               </CardHeader>
               <CardFooter className="mt-auto pt-4">
                 <Button variant="outline" className="w-full text-sm">
                   <Link
-                    href="https://github.com/papuaopensource/kastau-muzik"
+                    href="https://github.com/papuaopensource/mops"
                     target="_blank"
                     class="flex items-center justify-center gap-2"
                   >
@@ -224,17 +269,22 @@ import { ArrowRight, Code, Github, RefreshCw, Share2 } from "lucide-react";
               </CardFooter>
             </Card>
 
-            <Card className="flex flex-col h-full bg-card border border-border shadow-none rounded-[10px]">
+            <Card
+              className="flex flex-col h-full bg-card border border-border shadow-none rounded-[10px]"
+            >
               <CardHeader>
-                <CardTitle className="text-base font-semibold">Belajar Tentang Papua</CardTitle>
+                <CardTitle className="text-base font-semibold"
+                  >PapuaChronicles</CardTitle
+                >
                 <CardDescription className="text-sm leading-relaxed">
-                  Kumpulan informasi sederhana tentang Papua yang dibuat secara kolaboratif dan terus diperbarui bersama.
+                  Kumpulan informasi sederhana tentang Papua yang dibuat secara
+                  kolaboratif dan terus diperbarui bersama.
                 </CardDescription>
               </CardHeader>
               <CardFooter className="mt-auto pt-4">
                 <Button variant="outline" className="w-full text-sm">
                   <Link
-                    href="https://github.com/papuaopensource/belajartentangpapua"
+                    href="https://github.com/papuaopensource/papuachronicles"
                     target="_blank"
                     class="flex items-center justify-center gap-2"
                   >
@@ -275,20 +325,23 @@ import { ArrowRight, Code, Github, RefreshCw, Share2 } from "lucide-react";
             niatnya untuk Papua.
           </p>
           <div class="flex flex-col sm:flex-row gap-3">
-            <Button size="lg" variant="default" className="h-11 px-6 font-semibold text-sm">
+            <Button
+              size="lg"
+              variant="default"
+              className="h-11 px-6 font-semibold text-sm"
+            >
               <Link href="/kontribusi/">Cara Berkontribusi</Link>
             </Button>
             <Button size="lg" variant="outline" className="h-11 px-6 text-sm">
               <Link
                 href="https://discord.gg/kuW9EajFrw"
                 target="_blank"
-                rel="noopener noreferrer"
-              >Bergabung ke Discord</Link>
+                rel="noopener noreferrer">Bergabung ke Discord</Link
+              >
             </Button>
           </div>
         </div>
       </div>
     </section>
-
   </div>
 </Layout>
