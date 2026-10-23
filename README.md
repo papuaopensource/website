@@ -2,7 +2,7 @@
 
 Komunitas teknologi berbasis di Papua yang membangun perangkat lunak terbuka untuk semua.
 
-[Website](https://papuaopensource.github.io) · [Discord](https://discord.gg/kuW9EajFrw) · [Instagram](https://instagram.com/papuaopensource) · [X](https://x.com/papuaopensource)
+[Website](https://papuaopensource.org) · [Discord](https://discord.gg/kuW9EajFrw) · [Instagram](https://instagram.com/papuaopensource) · [X](https://x.com/papuaopensource)
 
 ## Tentang
 

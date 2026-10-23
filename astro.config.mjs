@@ -9,7 +9,10 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://papuaopensource.github.io",
+  site: "https://papuaopensource.org",
+  output: "static",
+  // Preserve the whitespace behavior from Astro 5.
+  compressHTML: true,
   trailingSlash: "always",
   vite: {
     plugins: [tailwindcss()],
