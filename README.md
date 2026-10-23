@@ -1,23 +1,23 @@
 # Papua Open Source
 
-Komunitas teknologi berbasis di Papua yang membangun perangkat lunak terbuka untuk semua.
+Things we’re making in Papua, shared for you to explore.
 
 [Website](https://papuaopensource.org) · [Discord](https://discord.gg/kuW9EajFrw) · [Instagram](https://instagram.com/papuaopensource) · [X](https://x.com/papuaopensource)
 
-## Tentang
+## About
 
-Papua Open Source adalah komunitas pengembang dan pecinta teknologi yang percaya bahwa perangkat lunak seharusnya terbuka — untuk dipelajari, dimodifikasi, dan dikembangkan bersama. Semua proyek kami gratis dan bisa dikontribusikan oleh siapa saja.
+We make tools and websites about Papua’s languages, food, stories, and more. Take a look, try something, or see how it works. Check each project’s license if you want to build on it.
 
-Website ini adalah titik masuk ke komunitas: informasi tentang kami, proyek-proyek yang sedang berjalan, panduan kontribusi, dan cara bergabung.
+This is where you can get to know our projects and why we’re making them.
 
-## Teknologi
+## Technology
 
 - [Astro](https://astro.build) — web framework
 - [Tailwind CSS](https://tailwindcss.com) — styling
-- [React](https://reactjs.org) — komponen interaktif
-- [shadcn/ui](https://ui.shadcn.com) — komponen UI
-- [Lucide Icons](https://lucide.dev) — ikon
+- [React](https://react.dev) — interactive components
+- [shadcn/ui](https://ui.shadcn.com) — UI components
+- [Lucide Icons](https://lucide.dev) — icons
 
-## Lisensi
+## License
 
-MIT — lihat [LICENSE](LICENSE) untuk detail.
+MIT — see [LICENSE](LICENSE) for details.
