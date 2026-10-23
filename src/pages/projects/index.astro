@@ -1,0 +1,46 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import ProjectList from "@/components/ProjectList.astro";
+import { projects } from "@/data/projects";
+---
+
+<Layout
+  title="Our projects — Papua Open Source"
+  description="Explore projects celebrating Papua’s languages, food, stories, and knowledge. Discover what they do and why we make them."
+>
+  <section class="section surface">
+    <div class="container narrow">
+      <p class="eyebrow">Our projects</p>
+      <h1>A few things we’re making for Papua.</h1>
+      <p class="lead">
+        Looking for a recipe, a word in Moy, or a good read? Start here. There’s
+        a story behind each project too.
+      </p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Find something you like</h2>
+        <p>
+          Start with what interests you. Each project has its own purpose and a
+          story worth exploring.
+        </p>
+      </div>
+      <ProjectList projects={projects} />
+    </div>
+  </section>
+  <section class="section surface">
+    <div class="container narrow">
+      <p class="eyebrow">What comes next?</p>
+      <h2>Got something in mind?</h2>
+      <p class="lead">
+        If there’s something you’d like to build, preserve, or make easier for
+        your community, we’d love to hear about it.
+      </p>
+      <a class="action" href="/contact/">
+        Share an idea <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </section>
+</Layout>

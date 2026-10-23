@@ -1,0 +1,113 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { projects } from "@/data/projects";
+export function getStaticPaths() {
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+const { project } = Astro.props;
+const related = projects
+  .filter((item) => item.slug !== project.slug)
+  .slice(0, 2);
+---
+
+<Layout
+  title={`${project.name} — Papua Open Source`}
+  description={project.summary}
+>
+  <section class="section surface">
+    <div class="container">
+      <a class="text-link back-link" href="/projects/">
+        ← All projects
+      </a>
+      <div class="detail-hero">
+        <div>
+          <p class="eyebrow">{project.category}</p>
+          <h1>{project.name}</h1>
+          <p class="lead">{project.summary}</p>
+        </div>
+        <div class="project-mark" aria-hidden="true">
+          {project.name
+            .split(" ")
+            .map((word) => word[0])
+            .join("")
+            .slice(0, 3)}
+          <span>Papua Open Source</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container story-grid">
+      <article class="story">
+        <p class="eyebrow">The story</p>
+        <h2>{project.headline}</h2>
+        {project.story.map((paragraph) => (
+          <p>{paragraph}</p>
+        ))}
+        <h2>What’s inside</h2>
+        <ul>
+          {project.experience.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+        <h2>Want to know more?</h2>
+        <p>{project.connection}</p>
+        <a class="action" href="/contact/">
+          Get in touch <span aria-hidden="true">↗</span>
+        </a>
+        {project.sourceNote && (
+          <aside class="source-note">
+            <h3>Sources & context</h3>
+            <p>{project.sourceNote}</p>
+          </aside>
+        )}
+      </article>
+      <aside class="project-aside">
+        <p class="eyebrow">Try it out</p>
+        <h2>
+          {project.website ? "Take a look around." : "Curious about the app?"}
+        </h2>
+        <p>
+          {project.website
+            ? "Visit the project to explore its content and see the work for yourself."
+            : "Interested in trying the mobile app? Get in touch with its maintainers."}
+        </p>
+        <a class="action" href={project.website ?? "/contact/"}>
+          {project.website ? "Visit the project" : "Ask about the app"}{" "}
+          <span aria-hidden="true">↗</span>
+        </a>
+        <div class="source-link">
+          <p>Curious about how it’s made?</p>
+          <a
+            class="text-link"
+            href={`https://github.com/papuaopensource/${project.repository}`}
+          >
+            Explore the source on GitHub ↗
+          </a>
+        </div>
+      </aside>
+    </div>
+  </section>
+  <section class="section surface">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Keep exploring</h2>
+        <a class="text-link" href="/projects/">
+          All projects →
+        </a>
+      </div>
+      <div class="two-columns">
+        {related.map((item) => (
+          <a class="related-project" href={`/projects/${item.slug}/`}>
+            <p class="eyebrow">{item.category}</p>
+            <h3>{item.name} ↗</h3>
+            <p>{item.summary}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
