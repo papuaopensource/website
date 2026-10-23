@@ -1,62 +1,31 @@
----
-import { Button } from "@/components/ui/button";
-import Link from "@/components/Link.astro";
-import { Github, Instagram, Twitter, Heart } from "lucide-react";
----
-
-<footer class="border-t border-border">
-    <div class="max-w-5xl mx-auto px-4 md:px-8 py-6 md:py-8 flex flex-col gap-4 md:flex-row md:items-center">
-        <!-- Left: Sponsor + Copyright -->
-        <div class="flex flex-col gap-4 md:flex-row md:items-center md:gap-6 md:mr-auto">
-            <a
-                href="https://github.com/sponsors/papuaopensource"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex items-center gap-2 px-3 py-1.5 bg-transparent hover:bg-secondary text-muted-foreground hover:text-foreground border border-border rounded-md text-sm font-medium transition-colors w-fit"
-            >
-                <Heart className="h-4 w-4 text-rose-400" />
-                <span>Sponsor</span>
-            </a>
-            <div class="flex items-center gap-2 text-sm text-muted-foreground">
-                <span>© 2026 Papua Open Source.</span>
-            </div>
-        </div>
-
-        <!-- Right: Social icons -->
-        <div class="flex gap-4">
-            <Button variant="ghost" size="icon" asChild>
-                <Link
-                    href="https://github.com/papuaopensource"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="text-muted-foreground hover:text-foreground"
-                >
-                    <Github className="h-4 w-4" />
-                    <span class="sr-only">GitHub</span>
-                </Link>
-            </Button>
-            <Button variant="ghost" size="icon" asChild>
-                <Link
-                    href="https://instagram.com/papuaopensource"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="text-muted-foreground hover:text-foreground"
-                >
-                    <Instagram className="h-4 w-4" />
-                    <span class="sr-only">Instagram</span>
-                </Link>
-            </Button>
-            <Button variant="ghost" size="icon" asChild>
-                <Link
-                    href="https://x.com/papuaopensource"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="text-muted-foreground hover:text-foreground"
-                >
-                    <Twitter className="h-4 w-4" />
-                    <span class="sr-only">Twitter/X</span>
-                </Link>
-            </Button>
-        </div>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <a class="footer-brand" href="/">
+          Papua Open Source
+        </a>
+        <p>Made in Papua. Happy to share.</p>
+      </div>
     </div>
+    <div class="footer-bottom">
+      <p>© {new Date().getFullYear()} Papua Open Source.</p>
+      <a
+        class="trakteer-button"
+        href="https://trakteer.id/papuaopensource"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Support Papua Open Source on Trakteer (opens in a new tab)"
+      >
+        <!-- Official button artwork: https://cdn.trakteer.id/images/embed/trbtn-red-1.png -->
+        <img
+          src="/images/trakteer-button.png"
+          alt="Trakteer"
+          width="134"
+          height="40"
+          loading="lazy"
+        />
+      </a>
+    </div>
+  </div>
 </footer>

@@ -33,10 +33,10 @@ let combinedAttrs = { ...attrs };
 
 if (isExternal) {
   relAttribute = { rel: "external noreferrer" };
-  // rel 'nooppener' is implict with target '_blank' - https://www.stefanjudis.com/today-i-learned/target-blank-implies-rel-noopener/
+  // Modern browsers imply noopener for links using target="_blank".
   targetAttribute = { target: "_blank" };
 } else if (isActive && activeClass) {
-  // Hanya tambahkan activeClass jika diberikan dan link aktif
+  // Add the optional active class only when this link matches the current page.
   const originalClass = attrs.class || "";
   combinedAttrs = {
     ...attrs,

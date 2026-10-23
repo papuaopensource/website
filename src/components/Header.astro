@@ -1,146 +1,102 @@
 ---
 import { Image } from "astro:assets";
 import Logo from "@/assets/images/papuaopensource-logo.png";
-
-import Link from "./Link.astro";
+const links = [
+  ["/projects/", "Projects"],
+  ["/open-source/", "Open source"],
+  ["/contribute/", "Support"],
+  ["/contact/", "Contact"],
+];
+const active = (href: string) => Astro.url.pathname.startsWith(href);
 ---
 
-<header class="sticky top-0 z-50 w-full border-b border-border bg-background">
-  <div
-    class="max-w-5xl mx-auto px-4 md:px-8 h-16 flex items-center justify-between"
-  >
-    <div class="flex items-center gap-2 font-semibold text-lg">
-      <a href="/">
-        <div class="flex items-center gap-2">
-          <Image
-            src={Logo}
-            alt="Papua Open Source Logo"
-            width={40}
-            height={40}
-            class="h-8 w-8 rounded-full bg-transparent"
-          />
-          <span class="text-foreground">Papua Open Source</span>
-        </div>
-      </a>
-    </div>
-    <nav class="hidden md:flex items-center gap-8">
-      <Link
-        href="/tentang/"
-        class="text-sm text-muted-foreground hover:text-foreground transition-colors"
-        activeClass="text-white font-semibold"
-      >
-        Tentang
-      </Link>
-      <Link
-        href="/open-source/"
-        class="text-sm text-muted-foreground hover:text-foreground transition-colors"
-        activeClass="text-white font-semibold"
-      >
-        Open Source
-      </Link>
-      <Link
-        href="/kontribusi/"
-        class="text-sm text-muted-foreground hover:text-foreground transition-colors"
-        activeClass="text-white font-semibold"
-      >
-        Berkontribusi
-      </Link>
-      <Link
-        href="/kontak/"
-        class="text-sm text-muted-foreground hover:text-foreground transition-colors"
-        activeClass="text-white font-semibold"
-      >
-        Hubungi
-      </Link>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/">
+      <Image src={Logo} alt="" width={36} height={36} />
+      <span>Papua Open Source</span>
+    </a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      {links.map(([href, label]) => (
+        <a href={href} aria-current={active(href) ? "page" : undefined}>
+          {label}
+        </a>
+      ))}
     </nav>
-
-    <!-- Mobile Menu -->
-    <div class="md:hidden" id="mobile-menu-container">
-      <button
-        class="inline-flex items-center justify-center rounded-md border border-border bg-background p-2 text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors"
-        id="mobile-menu-toggle"
+    <button
+      class="menu-toggle"
+      id="menu-toggle"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+      aria-label="Open navigation menu"
+    >
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        aria-hidden="true"
       >
-        <span class="sr-only">Toggle menu</span>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="h-5 w-5"
-        >
-          <line x1="4" x2="20" y1="12" y2="12"></line>
-          <line x1="4" x2="20" y1="6" y2="6"></line>
-          <line x1="4" x2="20" y1="18" y2="18"></line>
-        </svg>
-      </button>
-
-      <div
-        id="mobile-menu"
-        class="absolute top-16 left-0 right-0 bg-background border-b border-border shadow-lg hidden"
-      >
-        <nav
-          class="max-w-5xl mx-auto px-4 md:px-8 py-3 flex flex-col space-y-1"
-        >
-          <Link
-            href="/tentang/"
-            class="text-sm text-muted-foreground hover:text-foreground px-3 py-2 rounded-md hover:bg-secondary transition-colors"
-            data-menu-link
-          >
-            Tentang
-          </Link>
-          <Link
-            href="/open-source/"
-            class="text-sm text-muted-foreground hover:text-foreground px-3 py-2 rounded-md hover:bg-secondary transition-colors"
-            data-menu-link
-          >
-            Open Source
-          </Link>
-          <Link
-            href="/kontribusi/"
-            class="text-sm text-muted-foreground hover:text-foreground px-3 py-2 rounded-md hover:bg-secondary transition-colors"
-            data-menu-link
-          >
-            Berkontribusi
-          </Link>
-          <Link
-            href="/kontak/"
-            class="text-sm text-muted-foreground hover:text-foreground px-3 py-2 rounded-md hover:bg-secondary transition-colors"
-            data-menu-link
-          >
-            Hubungi
-          </Link>
-        </nav>
-      </div>
-    </div>
+        <path d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
   </div>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
-      const mobileMenu = document.getElementById("mobile-menu");
-      const menuLinks = document.querySelectorAll("[data-menu-link]");
-
-      if (mobileMenuToggle && mobileMenu) {
-        mobileMenuToggle.addEventListener("click", () => {
-          const isHidden = mobileMenu.classList.contains("hidden");
-          if (isHidden) {
-            mobileMenu.classList.remove("hidden");
-          } else {
-            mobileMenu.classList.add("hidden");
-          }
-        });
-
-        menuLinks.forEach((link) => {
-          link.addEventListener("click", () => {
-            mobileMenu.classList.add("hidden");
-          });
-        });
-      }
-    });
-  </script>
+  <nav
+    id="mobile-menu"
+    class="mobile-nav"
+    aria-label="Mobile navigation"
+    hidden
+  >
+    {links.map(([href, label]) => (
+      <a href={href} aria-current={active(href) ? "page" : undefined}>
+        {label}
+      </a>
+    ))}
+  </nav>
 </header>
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>("#menu-toggle");
+  const menu = document.querySelector<HTMLElement>("#mobile-menu");
+  function closeMenu() {
+    if (!toggle || !menu) return;
+    menu.hidden = true;
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-label", "Open navigation menu");
+  }
+  toggle?.addEventListener("click", () => {
+    if (!menu) return;
+    const open = toggle.getAttribute("aria-expanded") !== "true";
+    menu.hidden = !open;
+    toggle.setAttribute("aria-expanded", String(open));
+    toggle.setAttribute(
+      "aria-label",
+      open ? "Close navigation menu" : "Open navigation menu",
+    );
+  });
+  document.addEventListener("keydown", (event) => {
+    if (
+      event.key === "Escape" &&
+      toggle?.getAttribute("aria-expanded") === "true"
+    ) {
+      closeMenu();
+      toggle.focus();
+    }
+  });
+  document.addEventListener("click", (event) => {
+    if (
+      event.target instanceof Element &&
+      !event.target.closest(".site-header")
+    )
+      closeMenu();
+  });
+  menu
+    ?.querySelectorAll("a")
+    .forEach((link) => link.addEventListener("click", closeMenu));
+  window
+    .matchMedia("(min-width: 800px)")
+    .addEventListener("change", (event) => {
+      if (event.matches) closeMenu();
+    });
+</script>
