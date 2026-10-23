@@ -1,0 +1,65 @@
+---
+import { Github, Instagram, ArrowUpRight } from "lucide-react";
+import DiscordIcon from "./DiscordIcon.astro";
+interface Props {
+  expanded?: boolean;
+}
+const { expanded = false } = Astro.props;
+const socials = [
+  {
+    name: "Discord",
+    href: "https://discord.gg/kuW9EajFrw",
+    description: "Ask questions and meet the community.",
+    icon: null,
+  },
+  {
+    name: "Instagram",
+    href: "https://instagram.com/papuaopensource",
+    description: "Follow along with our community.",
+    icon: Instagram,
+  },
+  {
+    name: "X",
+    href: "https://x.com/papuaopensource",
+    description: "Keep up with our updates.",
+    icon: null,
+  },
+  {
+    name: "GitHub",
+    href: "https://github.com/papuaopensource",
+    description: "Look closer at how it’s made.",
+    icon: Github,
+  },
+];
+---
+
+<div class:list={["social-links", { expanded }]}>
+  {socials.map(({ name, href, description, icon: Icon }) => (
+    <a
+      class="social-link"
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`${name} (opens in a new tab)`}
+    >
+      <span class="social-icon" aria-hidden="true">
+        {name === "Discord" ? (
+          <DiscordIcon />
+        ) : Icon ? (
+          <Icon size={20} />
+        ) : (
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3L12 14.6 5.5 22H2.3l7.2-8.3L1.8 2h6.5l4.5 6.8L18.9 2Zm-1.1 18h1.7L7.4 3.9H5.6L17.8 20Z" />
+          </svg>
+        )}
+      </span>
+      <span class="social-copy">
+        <span class="social-name">{name}</span>
+        {expanded && <span class="social-description">{description}</span>}
+      </span>
+      {expanded && (
+        <ArrowUpRight size={18} aria-hidden="true" className="social-arrow" />
+      )}
+    </a>
+  ))}
+</div>

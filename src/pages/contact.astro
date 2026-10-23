@@ -1,0 +1,88 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import SocialLinks from "@/components/SocialLinks.astro";
+const questions = [
+  [
+    "What is Papua Open Source?",
+    "We’re a group of people in Papua who like making useful things. We look after the projects here and share them so you can use them and see how they work.",
+  ],
+  [
+    "Where can I follow the work?",
+    "Explore the projects, follow our updates, or say hello on Discord. You’re welcome to look around and enjoy what we’ve made.",
+  ],
+  [
+    "Can I suggest a change?",
+    "Sure. Tell us what you’ve noticed or what you have in mind. For bigger changes, check the project’s notes and talk to us before putting in the work. We’ll figure out what fits.",
+  ],
+  [
+    "Can I use these projects?",
+    "Have a look at the project’s license first. It tells you what you can use, change, and share. The rules can differ between projects, and things like photos or quoted text may have their own terms.",
+  ],
+  [
+    "How do I report a problem?",
+    "Tell us which project you’re using, what happened, and what you expected. Email or Discord is fine. If you already use GitHub, you can also open an issue in the project’s repository.",
+  ],
+  [
+    "Where can I hear about community activities?",
+    "Follow our social channels or join Discord for announcements and conversations about what we’re working on.",
+  ],
+];
+---
+
+<Layout
+  title="Contact — Papua Open Source"
+  description="Have an idea, a question, or a story to share? Say hello to Papua Open Source at hey@papuaopensource.org or join our community on Discord."
+>
+  <section class="section surface">
+    <div class="container narrow">
+      <p class="eyebrow">Contact</p>
+      <h1>Hey, what’s on your mind?</h1>
+      <p class="lead">
+        Got a question, found something broken, or just want to say hi? Drop us
+        a message.
+      </p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="contact-intro">
+        <div>
+          <p class="eyebrow">Write to us</p>
+          <h2>Say hello.</h2>
+          <a class="email-link" href="mailto:hey@papuaopensource.org">
+            hey@papuaopensource.org <span aria-hidden="true">↗</span>
+          </a>
+          <p class="muted">
+            Based in Jayapura, Papua, Indonesia.
+            <br />
+            Wherever you are, you’re welcome here.
+          </p>
+        </div>
+        <p class="lead">
+          Come hang out on Discord, or send us an email if you’ve got something
+          longer to share.
+        </p>
+      </div>
+      <SocialLinks expanded />
+    </div>
+  </section>
+  <section class="section surface">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Wondering about something?</p>
+        <h2>A few quick answers.</h2>
+      </div>
+      <div class="faq-list">
+        {questions.map(([question, answer]) => (
+          <details>
+            <summary>
+              {question}
+              <span aria-hidden="true">+</span>
+            </summary>
+            <p>{answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

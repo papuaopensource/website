@@ -1,226 +1,58 @@
 ---
-import { Image } from "astro:assets";
-import HeroImage from "@/assets/images/home-open-source-ilustration.svg";
-
 import Layout from "@/layouts/Layout.astro";
-import Link from "@/components/Link.astro";
-
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Code, Globe, Lightbulb, Users, Zap } from "lucide-react";
 ---
 
 <Layout
-  title="Kode terbuka bukan sekadar kata"
-  description="Open source bukan sekadar lisensi — ini cara berpikir. Pengetahuan seharusnya terbuka, teknologi seharusnya bisa dipelajari siapa saja."
+  title="Our approach — Papua Open Source"
+  description="Useful work, shared source, and room to make something of your own. Learn how we approach building for Papua."
 >
-  <div class="min-h-screen">
-
-    {/* Hero */}
-    <section class="bg-neutral-900 py-16 md:py-24">
-      <div class="max-w-5xl mx-auto px-4 md:px-8">
-        <div class="max-w-2xl space-y-4">
-          <p class="text-xs font-semibold tracking-widest uppercase text-muted-foreground">Open Source</p>
-          <h1 class="text-4xl font-bold sm:text-5xl">
-            Kode terbuka<br />bukan sekadar kata.
-          </h1>
-          <p class="text-muted-foreground text-lg leading-relaxed">
-            Open source adalah cara berpikir — bahwa pengetahuan seharusnya
-            terbuka, teknologi seharusnya bisa dipelajari siapa saja, dan
-            solusi terbaik lahir dari kolaborasi bukan dari kesendirian.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <div class="border-t border-border"></div>
-
-    {/* Apa itu Open Source */}
-    <section class="py-16 md:py-24">
-      <div class="max-w-5xl mx-auto px-4 md:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-          <div class="space-y-6">
-            <h2 class="text-3xl font-semibold">Apa itu open source?</h2>
-            <p class="text-muted-foreground text-base leading-relaxed">
-              Perangkat lunak open source adalah program yang kode sumbernya
-              dibuka ke publik. Siapa pun boleh membacanya, mempelajarinya,
-              mengubahnya, dan menyebarkannya — selama mengikuti lisensinya.
-            </p>
-            <p class="text-muted-foreground text-base leading-relaxed">
-              Ini bukan hanya tentang gratis. Linux, Android, Python, VS Code —
-              semuanya open source. Infrastruktur digital dunia modern berdiri
-              di atas perangkat lunak yang dibuat bersama-sama oleh jutaan
-              kontributor dari seluruh penjuru bumi.
-            </p>
-            <p class="text-muted-foreground text-base leading-relaxed">
-              Dan kamu bisa menjadi salah satunya.
-            </p>
-          </div>
-          <div class="hidden lg:block">
-            <Image
-              src={HeroImage}
-              alt="Ilustrasi Open Source"
-              width={600}
-              height={400}
-              class="rounded-xl object-cover opacity-90"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="border-t border-border"></div>
-
-    {/* Mengapa penting */}
-    <section class="bg-neutral-900 py-16 md:py-24">
-      <div class="max-w-5xl mx-auto px-4 md:px-8">
-        <div class="space-y-12">
-          <div class="space-y-3">
-            <h2 class="text-3xl font-semibold">Mengapa ini penting?</h2>
-            <p class="text-muted-foreground text-base">
-              Enam alasan mengapa open source relevan — khususnya untuk Papua.
-            </p>
-          </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            <div class="space-y-3">
-              <div class="flex items-center justify-center w-9 h-9 rounded-md bg-secondary text-foreground">
-                <Code className="h-4 w-4" />
-              </div>
-              <h3 class="font-semibold text-base">Transparansi</h3>
-              <p class="text-muted-foreground text-sm leading-relaxed">
-                Kode yang terbuka bisa diperiksa siapa saja. Tidak ada celah
-                tersembunyi yang bisa bersembunyi lama.
-              </p>
-            </div>
-            <div class="space-y-3">
-              <div class="flex items-center justify-center w-9 h-9 rounded-md bg-secondary text-foreground">
-                <Users className="h-4 w-4" />
-              </div>
-              <h3 class="font-semibold text-base">Kolaborasi</h3>
-              <p class="text-muted-foreground text-sm leading-relaxed">
-                Masalah yang sulit bagi satu orang bisa diselesaikan bersama
-                sepuluh orang. Open source membuat ini menjadi mungkin.
-              </p>
-            </div>
-            <div class="space-y-3">
-              <div class="flex items-center justify-center w-9 h-9 rounded-md bg-secondary text-foreground">
-                <Zap className="h-4 w-4" />
-              </div>
-              <h3 class="font-semibold text-base">Inovasi</h3>
-              <p class="text-muted-foreground text-sm leading-relaxed">
-                Tidak perlu mulai dari nol. Bangun di atas karya orang lain,
-                tambahkan yang kurang, dan bagikan hasilnya kembali.
-              </p>
-            </div>
-            <div class="space-y-3">
-              <div class="flex items-center justify-center w-9 h-9 rounded-md bg-secondary text-foreground">
-                <Globe className="h-4 w-4" />
-              </div>
-              <h3 class="font-semibold text-base">Aksesibilitas</h3>
-              <p class="text-muted-foreground text-sm leading-relaxed">
-                Tidak ada biaya lisensi yang menghalangi. Siapa pun di mana
-                pun bisa menggunakan dan berkontribusi.
-              </p>
-            </div>
-            <div class="space-y-3">
-              <div class="flex items-center justify-center w-9 h-9 rounded-md bg-secondary text-foreground">
-                <Lightbulb className="h-4 w-4" />
-              </div>
-              <h3 class="font-semibold text-base">Pembelajaran</h3>
-              <p class="text-muted-foreground text-sm leading-relaxed">
-                Membaca kode nyata dari proyek nyata adalah cara belajar
-                terbaik yang bisa kamu lakukan sebagai pengembang.
-              </p>
-            </div>
-            <div class="space-y-3">
-              <div class="flex items-center justify-center w-9 h-9 rounded-md bg-secondary text-foreground">
-                <Users className="h-4 w-4" />
-              </div>
-              <h3 class="font-semibold text-base">Keberlanjutan</h3>
-              <p class="text-muted-foreground text-sm leading-relaxed">
-                Proyek open source tidak mati ketika satu orang pergi.
-                Komunitas yang menjaganya akan terus melanjutkannya.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="border-t border-border"></div>
-
-    {/* Mengapa untuk Papua */}
-    <section class="py-16 md:py-24">
-      <div class="max-w-5xl mx-auto px-4 md:px-8">
-        <div class="space-y-8">
-          <div class="max-w-2xl space-y-4">
-            <h2 class="text-3xl font-semibold">
-              Mengapa open source untuk Papua?
-            </h2>
-            <p class="text-muted-foreground text-base leading-relaxed">
-              Papua punya kebutuhan teknologi yang khas — bahasa daerah yang
-              ratusan jumlahnya, tantangan geografis yang nyata, dan kesenjangan
-              digital yang masih lebar. Tidak ada produk komersial di luar sana
-              yang dirancang khusus untuk menjawab semua ini.
-            </p>
-          </div>
-          <div class="space-y-4">
-            <div class="bg-card border border-border p-6 rounded-[10px]">
-              <h3 class="font-semibold text-base mb-2">Dibuat oleh orang Papua, untuk Papua</h3>
-              <p class="text-muted-foreground text-sm leading-relaxed">
-                Tidak ada yang lebih tahu kebutuhan Papua selain orang Papua
-                sendiri. Open source memungkinkan kita membangun solusi yang
-                benar-benar sesuai, bukan solusi yang dipaksakan dari luar.
-              </p>
-            </div>
-            <div class="bg-card border border-border p-6 rounded-[10px]">
-              <h3 class="font-semibold text-base mb-2">Melestarikan bahasa dan budaya</h3>
-              <p class="text-muted-foreground text-sm leading-relaxed">
-                Papua punya ratusan bahasa daerah. Banyak yang terancam punah.
-                Platform digital yang terbuka bisa menjadi alat pelestarian
-                yang kuat — kamus digital, arsip audio, platform pembelajaran.
-              </p>
-            </div>
-            <div class="bg-card border border-border p-6 rounded-[10px]">
-              <h3 class="font-semibold text-base mb-2">Menghapus ketergantungan</h3>
-              <p class="text-muted-foreground text-sm leading-relaxed">
-                Teknologi yang kita bangun sendiri tidak akan tiba-tiba ditarik
-                atau dimonetisasi oleh pihak luar. Kita yang pegang kendalinya.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="border-t border-border"></div>
-
-    {/* CTA */}
-    <section class="bg-neutral-900 py-16 md:py-24">
-      <div class="max-w-5xl mx-auto px-4 md:px-8">
-        <div class="max-w-2xl space-y-6">
-          <h2 class="text-3xl font-semibold">Siap mulai?</h2>
-          <p class="text-muted-foreground text-base leading-relaxed">
-            Bergabunglah dengan komunitas kami dan mulai berkontribusi pada
-            proyek-proyek open source yang berdampak langsung untuk Papua.
-          </p>
-          <div class="flex flex-col sm:flex-row gap-3">
-            <Button size="lg" variant="default" className="h-11 px-6 font-semibold text-sm">
-              <Link href="/kontribusi/">Mulai Berkontribusi</Link>
-            </Button>
-            <Button size="lg" variant="outline" className="h-11 px-6 text-sm">
-              <Link
-                href="https://github.com/papuaopensource"
-                target="_blank"
-                class="flex items-center gap-2"
-              >
-                <span>Lihat semua proyek</span>
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </div>
+  <section class="section surface">
+    <div class="container narrow">
+      <p class="eyebrow">Our approach</p>
+      <h1>
+        We make things.
+        <br />
+        You can take a look.
+      </h1>
+      <p class="lead">
+        We like building things for Papua. Sharing how they work is part of the
+        fun.
+      </p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container story narrow">
+      <h2>See how it works.</h2>
+      <p>
+        Open the code, try something, and see what happens. Use whatever helps
+        you learn, including AI. Just take the time to understand what you’ve
+        made and check that it works.
+      </p>
+      <h2>Keep the idea in focus.</h2>
+      <p>
+        We’ve got ideas about where each project should go. We listen to
+        feedback, then work out what fits and what we can look after.
+      </p>
+      <h2>Want to try it another way?</h2>
+      <p>
+        Your needs might be different from ours. If the license allows it, take
+        a copy, change things, and see where your idea goes.
+      </p>
+      <h2>Check the license first.</h2>
+      <p>
+        We like sharing code, but not every project has the same rules. Open
+        source and source-available licenses differ, so check the license in the
+        repository before reusing or sharing a version of your own.
+      </p>
+    </div>
+  </section>
+  <section class="section surface">
+    <div class="container narrow">
+      <h2>Come see what we’re making.</h2>
+      <p class="lead">Explore the projects and the stories behind them.</p>
+      <a class="action" href="/projects/">
+        Explore our projects
+      </a>
+    </div>
+  </section>
 </Layout>

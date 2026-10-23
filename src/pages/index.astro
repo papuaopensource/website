@@ -1,347 +1,119 @@
 ---
 import { Image } from "astro:assets";
 import HeroImage from "@/assets/images/home-open-source-ilustration.svg";
-
 import Layout from "@/layouts/Layout.astro";
-import Link from "@/components/Link.astro";
-
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-  CardFooter,
-} from "@/components/ui/card";
-
-import { ArrowRight, Code, Github, RefreshCw, Share2 } from "lucide-react";
+import ProjectList from "@/components/ProjectList.astro";
+import { projects } from "@/data/projects";
+const principles = [
+  [
+    "01",
+    "Share what we know.",
+    "We make our work open so people can explore it, learn from it, and build on it.",
+  ],
+  [
+    "02",
+    "Keep it focused.",
+    "We know what we want each project to do, and keep it focused on doing that well.",
+  ],
+  [
+    "03",
+    "Make it your own.",
+    "Got an idea of your own? Have a look at the code and see what the license lets you build on.",
+  ],
+];
 ---
 
 <Layout
-  title="Kolaborasi Berbasis Open Source untuk Tanah Papua"
-  description="Komunitas pengembang yang membangun perangkat lunak terbuka untuk Papua. Gratis, bisa dipelajari, dan bisa dikembangkan oleh siapa saja."
+  title="Made with Love. For Papua. — Papua Open Source"
+  description="Independent projects rooted in Papua. Explore the work, the stories behind it, and the ideas you can learn from."
 >
-  <div class="min-h-screen">
-    {/* Hero */}
-    <section class="py-20 md:py-32">
-      <div class="max-w-5xl mx-auto px-4 md:px-8">
-        <div
-          class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16 items-center"
-        >
-          <div class="space-y-7">
-            <h1 class="text-5xl font-bold sm:text-6xl">
-              Teknologi untuk Papua,<br />dibuat bersama.
-            </h1>
-            <p class="text-muted-foreground text-lg leading-relaxed max-w-lg">
-              Kami adalah komunitas pengembang, desainer, dan pecinta teknologi
-              yang membangun perangkat lunak terbuka untuk Tanah Papua. Terbuka
-              untuk dipelajari, dimodifikasi, dan dikembangkan oleh siapa saja.
-            </p>
-            <div class="flex flex-col gap-3 min-[400px]:flex-row">
-              <Button
-                size="lg"
-                variant="default"
-                className="h-11 px-6 font-semibold text-sm tracking-wide"
-              >
-                <Link href="/kontribusi/">Mulai Berkontribusi</Link>
-              </Button>
-              <Button size="lg" variant="outline" className="h-11 px-6 text-sm">
-                <Link href="/open-source/">Pelajari Open Source</Link>
-              </Button>
-            </div>
-          </div>
-          <div class="flex justify-center lg:justify-end">
-            <Image
-              src={HeroImage}
-              alt="Ilustrasi Open Source Papua"
-              width={520}
-              height={380}
-              class="rounded-xl object-cover w-full max-w-md lg:max-w-full opacity-90"
-            />
-          </div>
+  <section class="section home-hero">
+    <div class="container hero-grid">
+      <div>
+        <p class="eyebrow">Rooted in Papua. Shared with you.</p>
+        <h1>
+          Made with Love.
+          <br />
+          For Papua.
+        </h1>
+        <p class="lead">
+          We’re making places to learn a word, find a recipe, and read stories
+          from Papua. They’re things we enjoy using ourselves, and we hope you
+          will too. Have a look around, and if you’re curious about how they
+          work, you can explore the code as well.
+        </p>
+        <div class="actions">
+          <a class="action" href="/projects/">
+            Explore our projects <span aria-hidden="true">↗</span>
+          </a>
+          <a class="action secondary" href="/open-source/">
+            Our approach
+          </a>
         </div>
       </div>
-    </section>
-
-    <div class="border-t border-border"></div>
-
-    {/* Cara Kerja */}
-    <section class="bg-neutral-900 py-16 md:py-24">
-      <div class="max-w-5xl mx-auto px-4 md:px-8">
-        <div class="space-y-12">
-          <div class="space-y-3">
-            <p
-              class="text-xs font-semibold tracking-widest uppercase text-muted-foreground"
-            >
-              Cara Kerja Kami
-            </p>
-            <h2 class="text-3xl font-semibold">
-              Sederhana, terbuka, berulang.
-            </h2>
-          </div>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-            <div class="space-y-3">
-              <div
-                class="flex items-center justify-center w-9 h-9 rounded-md bg-secondary text-foreground"
-              >
-                <Share2 className="h-4 w-4" />
-              </div>
-              <h3 class="font-semibold text-base">Share</h3>
-              <p class="text-muted-foreground text-sm leading-relaxed">
-                Semua kode dibuka ke publik. Siapa pun bisa melihat, belajar,
-                dan memahami cara kerja setiap proyek.
-              </p>
-            </div>
-            <div class="space-y-3">
-              <div
-                class="flex items-center justify-center w-9 h-9 rounded-md bg-secondary text-foreground"
-              >
-                <Code className="h-4 w-4" />
-              </div>
-              <h3 class="font-semibold text-base">Improve</h3>
-              <p class="text-muted-foreground text-sm leading-relaxed">
-                Temukan bug, usulkan perubahan, atau tambahkan fitur baru. Kode
-                yang baik terus berkembang lewat banyak tangan.
-              </p>
-            </div>
-            <div class="space-y-3">
-              <div
-                class="flex items-center justify-center w-9 h-9 rounded-md bg-secondary text-foreground"
-              >
-                <RefreshCw className="h-4 w-4" />
-              </div>
-              <h3 class="font-semibold text-base">Repeat</h3>
-              <p class="text-muted-foreground text-sm leading-relaxed">
-                Siklus ini terus berjalan. Setiap kontribusi membuka peluang
-                bagi kontribusi berikutnya.
-              </p>
-            </div>
-          </div>
-        </div>
+      <Image
+        src={HeroImage}
+        alt="People collaborating on an open source project"
+        width={520}
+        height={380}
+        class="hero-image"
+      />
+    </div>
+  </section>
+  <section class="section surface">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">How we work</p>
+        <h2>
+          Make something useful.
+          <br />
+          Share what we learn.
+        </h2>
       </div>
-    </section>
-
-    <div class="border-t border-border"></div>
-
-    {/* Proyek */}
-    <section class="py-16 md:py-24">
-      <div class="max-w-5xl mx-auto px-4 md:px-8">
-        <div class="space-y-12">
-          <div class="space-y-3">
-            <p
-              class="text-xs font-semibold tracking-widest uppercase text-muted-foreground"
-            >
-              Proyek Kami
-            </p>
-            <h2 class="text-3xl font-semibold">Apa yang sedang kami bangun.</h2>
-            <p class="max-w-xl text-muted-foreground text-base">
-              Setiap proyek lahir dari kebutuhan nyata di Papua — dari
-              pelestarian bahasa daerah hingga promosi wisata lokal.
-            </p>
+      <div class="three-columns">
+        {principles.map(([number, title, text]) => (
+          <div class="principle">
+            <span class="eyebrow">{number}</span>
+            <h3>{title}</h3>
+            <p>{text}</p>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            <Card
-              className="flex flex-col h-full bg-card border border-border shadow-none rounded-[10px]"
-            >
-              <CardHeader>
-                <CardTitle className="text-base font-semibold"
-                  >Dapoer Papoea</CardTitle
-                >
-                <CardDescription className="text-sm leading-relaxed">
-                  Dokumentasi dan pelestarian resep-resep kuliner khas Papua
-                  dalam satu platform terbuka.
-                </CardDescription>
-              </CardHeader>
-              <CardFooter className="mt-auto pt-4">
-                <Button variant="outline" className="w-full text-sm">
-                  <Link
-                    href="https://github.com/papuaopensource/dapoer-papoea"
-                    target="_blank"
-                    class="flex items-center justify-center gap-2"
-                  >
-                    <Github className="h-4 w-4" />
-                    <span>Lihat di GitHub</span>
-                  </Link>
-                </Button>
-              </CardFooter>
-            </Card>
-
-            <Card
-              className="flex flex-col h-full bg-card border border-border shadow-none rounded-[10px]"
-            >
-              <CardHeader>
-                <CardTitle className="text-base font-semibold"
-                  >Kamus Bahasa Moy — Web</CardTitle
-                >
-                <CardDescription className="text-sm leading-relaxed">
-                  Kamus digital untuk melestarikan bahasa Moy dari Jayapura,
-                  dapat diakses langsung di browser.
-                </CardDescription>
-              </CardHeader>
-              <CardFooter className="mt-auto pt-4">
-                <Button variant="outline" className="w-full text-sm">
-                  <Link
-                    href="https://github.com/papuaopensource/kamus-bahasa-moy-website"
-                    target="_blank"
-                    class="flex items-center justify-center gap-2"
-                  >
-                    <Github className="h-4 w-4" />
-                    <span>Lihat di GitHub</span>
-                  </Link>
-                </Button>
-              </CardFooter>
-            </Card>
-
-            <Card
-              className="flex flex-col h-full bg-card border border-border shadow-none rounded-[10px]"
-            >
-              <CardHeader>
-                <CardTitle className="text-base font-semibold"
-                  >Kamus Bahasa Moy — Mobile</CardTitle
-                >
-                <CardDescription className="text-sm leading-relaxed">
-                  Versi mobile app dari kamus Bahasa Moy, tersedia di genggaman
-                  untuk pengguna Android.
-                </CardDescription>
-              </CardHeader>
-              <CardFooter className="mt-auto pt-4">
-                <Button variant="outline" className="w-full text-sm">
-                  <Link
-                    href="https://github.com/papuaopensource/kamus-bahasa-moy-mobile"
-                    target="_blank"
-                    class="flex items-center justify-center gap-2"
-                  >
-                    <Github className="h-4 w-4" />
-                    <span>Lihat di GitHub</span>
-                  </Link>
-                </Button>
-              </CardFooter>
-            </Card>
-
-            <Card
-              className="flex flex-col h-full bg-card border border-border shadow-none rounded-[10px]"
-            >
-              <CardHeader>
-                <CardTitle className="text-base font-semibold"
-                  >Papuan Thought</CardTitle
-                >
-                <CardDescription className="text-sm leading-relaxed">
-                  Sebuah platform terbuka untuk esai, refleksi, dan tulisan
-                  komunitas dari orang Papua.
-                </CardDescription>
-              </CardHeader>
-              <CardFooter className="mt-auto pt-4">
-                <Button variant="outline" className="w-full text-sm">
-                  <Link
-                    href="https://github.com/papuaopensource/papuanthought"
-                    target="_blank"
-                    class="flex items-center justify-center gap-2"
-                  >
-                    <Github className="h-4 w-4" />
-                    <span>Lihat di GitHub</span>
-                  </Link>
-                </Button>
-              </CardFooter>
-            </Card>
-
-            <Card
-              className="flex flex-col h-full bg-card border border-border shadow-none rounded-[10px]"
-            >
-              <CardHeader>
-                <CardTitle className="text-base font-semibold">Mops</CardTitle>
-                <CardDescription className="text-sm leading-relaxed">
-                  Project yang bertujuan mengumpulkan dan menyebarluaskan "mop"
-                  — istilah lokal Papua untuk cerita lucu, lelucon, atau kisah
-                  ringan yang diceritakan dalam dialek Papua.
-                </CardDescription>
-              </CardHeader>
-              <CardFooter className="mt-auto pt-4">
-                <Button variant="outline" className="w-full text-sm">
-                  <Link
-                    href="https://github.com/papuaopensource/mops"
-                    target="_blank"
-                    class="flex items-center justify-center gap-2"
-                  >
-                    <Github className="h-4 w-4" />
-                    <span>Lihat di GitHub</span>
-                  </Link>
-                </Button>
-              </CardFooter>
-            </Card>
-
-            <Card
-              className="flex flex-col h-full bg-card border border-border shadow-none rounded-[10px]"
-            >
-              <CardHeader>
-                <CardTitle className="text-base font-semibold"
-                  >PapuaChronicles</CardTitle
-                >
-                <CardDescription className="text-sm leading-relaxed">
-                  Kumpulan informasi sederhana tentang Papua yang dibuat secara
-                  kolaboratif dan terus diperbarui bersama.
-                </CardDescription>
-              </CardHeader>
-              <CardFooter className="mt-auto pt-4">
-                <Button variant="outline" className="w-full text-sm">
-                  <Link
-                    href="https://github.com/papuaopensource/papuachronicles"
-                    target="_blank"
-                    class="flex items-center justify-center gap-2"
-                  >
-                    <Github className="h-4 w-4" />
-                    <span>Lihat di GitHub</span>
-                  </Link>
-                </Button>
-              </CardFooter>
-            </Card>
-          </div>
-          <div>
-            <Button variant="outline" className="gap-2 text-sm">
-              <Link
-                href="https://github.com/orgs/papuaopensource/repositories"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="flex items-center gap-2"
-              >
-                <span>Lihat semua proyek</span>
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
-        </div>
+        ))}
       </div>
-    </section>
-
-    <div class="border-t border-border"></div>
-
-    {/* CTA */}
-    <section class="bg-neutral-900 py-16 md:py-24">
-      <div class="max-w-5xl mx-auto px-4 md:px-8">
-        <div class="max-w-2xl space-y-6">
-          <h2 class="text-3xl font-semibold">Tertarik bergabung?</h2>
-          <p class="text-muted-foreground text-base leading-relaxed">
-            Tidak perlu jadi ahli dulu. Kontribusi bisa dimulai dari melaporkan
-            bug, menulis dokumentasi, atau sekadar berdiskusi ide. Yang penting,
-            niatnya untuk Papua.
-          </p>
-          <div class="flex flex-col sm:flex-row gap-3">
-            <Button
-              size="lg"
-              variant="default"
-              className="h-11 px-6 font-semibold text-sm"
-            >
-              <Link href="/kontribusi/">Cara Berkontribusi</Link>
-            </Button>
-            <Button size="lg" variant="outline" className="h-11 px-6 text-sm">
-              <Link
-                href="https://discord.gg/kuW9EajFrw"
-                target="_blank"
-                rel="noopener noreferrer">Bergabung ke Discord</Link
-              >
-            </Button>
-          </div>
-        </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Selected projects</p>
+        <h2>Here’s what we’re making.</h2>
+        <p>
+          Food, language, and the stories of a place. Get to know the ideas
+          behind three of our projects.
+        </p>
       </div>
-    </section>
-  </div>
+      <ProjectList projects={projects.filter((project) => project.featured)} />
+      <a class="action secondary" href="/projects/">
+        Explore all projects <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </section>
+  <section class="section surface">
+    <div class="container narrow">
+      <p class="eyebrow">Yours to explore</p>
+      <h2>Take a look around.</h2>
+      <p class="lead">
+        Try a recipe. Learn a word. Find a story you want to share. If something
+        catches your interest, follow it—you might end up making something of
+        your own.
+      </p>
+      <div class="actions">
+        <a class="action" href="/contribute/">
+          Support the work
+        </a>
+        <a class="action secondary" href="https://discord.gg/kuW9EajFrw">
+          Join us on Discord ↗
+        </a>
+      </div>
+    </div>
+  </section>
 </Layout>
