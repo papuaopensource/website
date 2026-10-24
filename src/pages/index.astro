@@ -24,7 +24,7 @@ const principles = [
 ---
 
 <Layout
-  title="Made with Love. For Papua. — Papua Open Source"
+  title="Rooted in Papua. Shared with you. — Papua Open Source"
   description="Independent projects rooted in Papua. Explore the work, the stories behind it, and the ideas you can learn from."
 >
   <section class="section home-hero">
@@ -46,9 +46,7 @@ const principles = [
           <a class="action" href="/projects/">
             Explore our projects <span aria-hidden="true">↗</span>
           </a>
-          <a class="action secondary" href="/open-source/">
-            Our approach
-          </a>
+          <a class="action secondary" href="/open-source/"> Our approach </a>
         </div>
       </div>
       <Image
@@ -71,13 +69,15 @@ const principles = [
         </h2>
       </div>
       <div class="three-columns">
-        {principles.map(([number, title, text]) => (
-          <div class="principle">
-            <span class="eyebrow">{number}</span>
-            <h3>{title}</h3>
-            <p>{text}</p>
-          </div>
-        ))}
+        {
+          principles.map(([number, title, text]) => (
+            <div class="principle">
+              <span class="eyebrow">{number}</span>
+              <h3>{title}</h3>
+              <p>{text}</p>
+            </div>
+          ))
+        }
       </div>
     </div>
   </section>
@@ -107,9 +107,7 @@ const principles = [
         your own.
       </p>
       <div class="actions">
-        <a class="action" href="/contribute/">
-          Support the work
-        </a>
+        <a class="action" href="/contribute/"> Support the work </a>
         <a class="action secondary" href="https://discord.gg/kuW9EajFrw">
           Join us on Discord ↗
         </a>
